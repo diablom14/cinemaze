@@ -1,0 +1,74 @@
+# ======================
+# Node modules (client & server)
+# ======================
+client/node_modules/
+server/node_modules/
+node_modules/  # just in case
+
+# ======================
+# Build outputs
+# ======================
+client/dist/
+client/build/
+server/dist/
+build/
+dist/
+
+# ======================
+# Environment files
+# ======================
+.env
+.env.*
+client/.env
+client/.env.*
+server/.env
+server/.env.*
+
+# ======================
+# Logs
+# ======================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ======================
+# Testing / Coverage
+# ======================
+coverage/
+client/coverage/
+server/coverage/
+.nyc_output/
+
+# ======================
+# OS files
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# IDE/editor settings
+# ======================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ======================
+# Others (optional)
+# ======================
+*.local
+*.cache
+*.swp
+*.tgz
+
+# Lockfiles (optional if you prefer Yarn or PNPM)
+package-lock.json
+client/package-lock.json
+server/package-lock.json
+
+# VSCode workspace files
+*.code-workspace
+
+# Docker (if used)
+docker-compose.override.yml
