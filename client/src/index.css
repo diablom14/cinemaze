@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme{
+    --color-primary: #5170FF;
+    --color-primary-dull: #475A99;
+}
+*{
+    font-family: "Outfit", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #787777 #1e1e1e  ;
+}
+
+body{
+    color: white;
+    background-color: #09090B;
+}
