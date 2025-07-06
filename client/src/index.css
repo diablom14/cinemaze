@@ -16,3 +16,9 @@ body{
     color: white;
     background-color: #09090B;
 }
+
+.shadow-1{
+    
+   box-shadow:  20px 20px 86px #040715,
+             -20px -20px 86px #121d53;
+}
