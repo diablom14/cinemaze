@@ -1,4 +1,3 @@
-import React from 'react'
 import { FeaturedSection, HeroSection } from '../components'
 function Home() {
   return (
