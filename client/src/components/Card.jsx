@@ -8,7 +8,7 @@ function Card({
   releaseYear = "",
   genre = "",
   duration = "",
-  rating = "9.9",
+  rating = 9,
 }) {
 
   const navigate = useNavigate()
@@ -32,8 +32,8 @@ function Card({
                     
             "
       >
-        <h1 className="opacity-100">{movieName}</h1>
-        <p className="text-gray-400 text-xs">
+        <h1 className="opacity-100 line-clamp-1">{movieName}</h1>
+        <p className="text-gray-400 text-xs line-clamp-1">
           {releaseYear} | {genre} | {duration}
         </p>
         <div className="flex justify-between mt-3">
@@ -48,7 +48,7 @@ function Card({
           </button>
           <span className="mt-3 flex items-center justify-between text-gray-300">
             <img src={assets.star} alt="star" className="w-4.5 h-4.5 mx-2" />
-            {rating}
+            {rating.toFixed(1)}
           </span>
         </div>
       </div>

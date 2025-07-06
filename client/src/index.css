@@ -22,3 +22,9 @@ body{
    box-shadow:  20px 20px 86px #040715,
              -20px -20px 86px #121d53;
 }
+
+/* User Button class */
+.cl-avatarBox{
+  width: 2.75rem;
+  height: 2.75rem;
+}
