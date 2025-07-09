@@ -42,7 +42,7 @@ function Card({
                      hover:bg-primary-dull rounded-md 
                     cursor-pointer
           "
-            onClick={()=>navigate(`movies:${id}`)}
+            onClick={()=>navigate(`/movies/${id}`)}
           >
             Book Now
           </button>
