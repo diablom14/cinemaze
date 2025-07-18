@@ -20,6 +20,7 @@ function Card({
                 shadow-1
                 `}
       style={{ backgroundImage: `url(${movieImg})` }}
+      onClick={()=>navigate(`movies/${id}`)}
     >
       <div
         className="opacity-0 group-hover:opacity-100
@@ -42,7 +43,7 @@ function Card({
                      hover:bg-primary-dull rounded-md 
                     cursor-pointer
           "
-            onClick={()=>navigate(`movies:${id}`)}
+            onClick={()=>navigate(`movies/${id}`)}
           >
             Book Now
           </button>
