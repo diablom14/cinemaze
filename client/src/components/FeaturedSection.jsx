@@ -9,6 +9,10 @@ function FeaturedSection({ classNames = "" }) {
   const path = useLocation().pathname;
   console.log(path);
 
+  const handleBookNow = (id) => {
+    navigate(`/movies/${id}`, { state: {bookTickets : true}});
+  }
+
   useEffect(() => {
     const updateVisibleCount = () => {
       const cardWidth = 250 + 32; //card width + gap-8
@@ -55,6 +59,7 @@ function FeaturedSection({ classNames = "" }) {
               releaseYear={show.release_date}
               rating={show.vote_average}
               id={show.id}
+              onBookNow={handleBookNow}
             />
           ))}
         </div>

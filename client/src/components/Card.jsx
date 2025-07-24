@@ -1,6 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 function Card({
   id = "",
   movieImg,
@@ -9,9 +9,20 @@ function Card({
   genre = "",
   duration = "",
   rating = 9,
+  onBookNow = false
 }) {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
+  function handleBookNowClick(e) {
+    e.stopPropagation();
+    scrollTo(0, 0);
+    if (onBookNow) {
+      onBookNow(id);
+    } else {
+      navigate(`/movies/${id}`);
+    }
+  }
+
   return (
     <div
       className={`h-[300px] w-[250px] bg-cover bg-center rounded-2xl group
@@ -20,7 +31,10 @@ function Card({
                 shadow-1
                 `}
       style={{ backgroundImage: `url(${movieImg})` }}
-      onClick={()=>navigate(`movies/${id}`)}
+      onClick={() => {
+        scrollTo(0, 0);
+        navigate(`/movies/${id}`);
+      }}
     >
       <div
         className="opacity-0 group-hover:opacity-100
@@ -43,7 +57,7 @@ function Card({
                      hover:bg-primary-dull rounded-md 
                     cursor-pointer
           "
-            onClick={()=>navigate(`movies/${id}`)}
+            onClick={handleBookNowClick}
           >
             Book Now
           </button>
