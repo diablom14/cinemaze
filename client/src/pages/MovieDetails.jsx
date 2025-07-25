@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import MovieDetailsHero from "../components/MovieDetailsHero";
 import { dummyShowsData } from "../assets/assets.js";
 import CastIcon from "../components/CastIcon.jsx";
@@ -7,8 +7,10 @@ import Card from "../components/Card.jsx";
 
 function MovieDetails() {
   const { id } = useParams();
+  const location = useLocation();
   const show = dummyShowsData.find((item) => item.id === Number(id));
   const casts = show.casts; 
+  const bookTickets = location.state?.bookTickets || false;
 
   return (
     <div className="w-4/5 mx-auto">
@@ -20,6 +22,7 @@ function MovieDetails() {
         duration={`${Math.floor(show.runtime / 60)}h ${show.runtime % 60}m`}
         genre={show.genres.map((genre) => genre.name + " ")}
         releaseYear={show.release_date.substring(0, 4)}
+        bookTickets={bookTickets}
       />
       <h2 className="text-3xl">Cast</h2>
       <div className="grid grid-cols-10 gap-5 my-5">
